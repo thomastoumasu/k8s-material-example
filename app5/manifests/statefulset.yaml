@@ -6,8 +6,8 @@ metadata:
     app: redis
 spec:
   ports:
-  - port: 6379
-    name: web
+    - port: 6379
+      name: web
   clusterIP: None
   selector:
     app: redisapp

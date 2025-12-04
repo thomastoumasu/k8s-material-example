@@ -5,10 +5,10 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app: hashresponse
+    app: hashresponse # app as declared in the deployment
   ports:
     - name: http
-      nodePort: 30080
+      port: 1234 # This is a port that is available to the cluster, in this case it can be ~ anything
       protocol: TCP
-      port: 1234
       targetPort: 3000
+      nodePort: 30080 # port that is available outside. Value for nodePort can be between 30000-32767

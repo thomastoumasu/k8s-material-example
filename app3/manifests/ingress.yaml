@@ -4,12 +4,19 @@ metadata:
   name: dwk-material-ingress
 spec:
   rules:
-  - http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: images-svc
-            port: 
-              number: 2345
+    - http:
+        paths:
+          - path: /response
+            pathType: Prefix
+            backend:
+              service:
+                name: response-svc
+                port:
+                  number: 1234
+          - path: /finder
+            pathType: Prefix
+            backend:
+              service:
+                name: finder-svc
+                port:
+                  number: 2345
